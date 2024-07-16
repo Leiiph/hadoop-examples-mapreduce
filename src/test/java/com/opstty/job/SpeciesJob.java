@@ -1,4 +1,4 @@
-package com.opstty.driver;
+package com.opstty.job;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -8,18 +8,18 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-import com.opstty.mapper.DistrictMap;
-import com.opstty.reducer.DistrictRed;
+import com.opstty.mapper.SpeciesMap;
+import com.opstty.reducer.SpeciesRed;
 
-public class DistrictDriver {
+public class SpeciesJob {
     public static void main(String[] args) throws Exception {
 
         Configuration conf = new Configuration();
-        Job job = Job.getInstance(conf, "Districts With Trees");
+        Job job = Job.getInstance(conf, "species of Trees");
 
-        job.setJarByClass(DistrictDriver.class);
-        job.setMapperClass(DistrictMap.class);
-        job.setReducerClass(DistrictRed.class);
+        job.setJarByClass(SpeciesJob.class);
+        job.setMapperClass(SpeciesMap.class);
+        job.setReducerClass(SpeciesRed.class);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(NullWritable.class);
