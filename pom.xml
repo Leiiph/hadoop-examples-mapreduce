@@ -77,7 +77,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>com.opstty.AppDriver</mainClass>
+              <mainClass>com.opstty.driver.DistrictDriver</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>
